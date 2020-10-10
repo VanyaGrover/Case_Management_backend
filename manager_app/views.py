@@ -11,13 +11,7 @@ from rest_framework import serializers
 import json
 from django.core.serializers.json import DjangoJSONEncoder
 from rest_framework.mixins import UpdateModelMixin, DestroyModelMixin
-from .serializers import UpdateViewSerializer, TaskCreateSerializer
-from rest_framework.generics import CreateAPIView
-
-class TaskCreateView(CreateAPIView):
-    queryset = Task.objects.all()
-    serializer_class = TaskCreateSerializer
-    
+from .serializers import UpdateViewSerializer
 
 # Create your views here.
 class TaskViews(APIView):
